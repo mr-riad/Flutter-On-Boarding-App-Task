@@ -5,20 +5,19 @@ import '../../../common_widgets/custom_button.dart';
 import '../../controllers/onboarding_controller.dart';
 import 'onboarding_page.dart';
 
-
 class OnboardingScreen extends StatelessWidget {
   final controller = Get.put(OnboardingController());
+  final PageController pageController = PageController();
 
   OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    PageController pageController = PageController();
-
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
+            // PageView
             Expanded(
               child: PageView.builder(
                 controller: pageController,
@@ -53,13 +52,14 @@ class OnboardingScreen extends StatelessWidget {
             )),
             const SizedBox(height: 20),
 
-            // Custom Next / Get Started Button
             Obx(() => CustomButton(
-              text: controller.currentPage.value == controller.pages.length - 1
+              text: controller.currentPage.value ==
+                  controller.pages.length - 1
                   ? "Get Started"
                   : "Next",
               onTap: () {
-                if (controller.currentPage.value < controller.pages.length - 1) {
+                if (controller.currentPage.value <
+                    controller.pages.length - 1) {
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeIn,

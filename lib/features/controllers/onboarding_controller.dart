@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import '../../constants/app_strings.dart';
 import '../models/onboarding_model.dart';
-import '../screens/location/location_page.dart';
 
 class OnboardingController extends GetxController {
   var currentPage = 0.obs;
@@ -29,14 +28,6 @@ class OnboardingController extends GetxController {
   }
 
   void skipOnboarding() {
-    Get.off(() => const LocationPermissionPage());
-  }
-
-  void nextPage() {
-    if (currentPage.value == pages.length - 1) {
-      skipOnboarding();
-    } else {
-      currentPage.value++;
-    }
+    Get.offAllNamed('/location');
   }
 }
