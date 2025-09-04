@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../features/screens/onboarding/onboarding_screen.dart';
 
 class FlutterOnBoardAppTask extends StatefulWidget {
   const FlutterOnBoardAppTask({super.key});
@@ -10,8 +12,9 @@ class FlutterOnBoardAppTask extends StatefulWidget {
 class _FlutterOnBoardAppTaskState extends State<FlutterOnBoardAppTask> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OnboardingScreen(),
     );
   }
 }

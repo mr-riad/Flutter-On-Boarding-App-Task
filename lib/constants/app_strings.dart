@@ -1,13 +1,13 @@
 class AppStrings {
   // Onboarding
   static const String onboardingTitle1 = "Sync with Nature's Rhythm";
-  static const String onboardingDesc1 = "Connect your daily routine with natural patterns";
+  static const String onboardingDesc1 = "Experience a peaceful transition into the evening with an alarm that aligns with the sunset.Your perfect reminder, always 15 minutes before sundown";
 
   static const String onboardingTitle2 = "Effortless & Automatic";
-  static const String onboardingDesc2 = "Set it once and let nature guide your schedule";
+  static const String onboardingDesc2 = "No need to set alarms manually. Wakey calculates the sunset time for your location and alerts you on time.";
 
   static const String onboardingTitle3 = "Relax & Unwind";
-  static const String onboardingDesc3 = "Find perfect moments for rest and relaxation";
+  static const String onboardingDesc3 = "hope to take the courage to pursue your dreams.";
 
   static const String skip = "Skip";
   static const String next = "Next";
