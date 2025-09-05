@@ -18,7 +18,7 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => const FlutterOnBoardAppTask(), // Wrap your app
+      builder: (context) => const FlutterOnBoardAppTask(),
     ),
   );
 }

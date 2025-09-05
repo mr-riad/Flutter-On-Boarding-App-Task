@@ -58,6 +58,7 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Icon(Icons.location_on, color: Colors.white, size: 20),
                     const SizedBox(width: 12),
@@ -68,7 +69,8 @@ class HomePage extends StatelessWidget {
                               ? AppStrings.noLocationSelected
                               : locationController.location.value,
                           style: TextStyle(color: Colors.white, fontSize: descFontSize),
-                          overflow: TextOverflow.ellipsis,
+                          softWrap: true,                 // allow wrapping
+                          overflow: TextOverflow.visible, // no dots (...)
                         ),
                       ),
                     ),
@@ -110,8 +112,10 @@ class HomePage extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20),
-              const Text(AppStrings.myAlarms,
-                  style: TextStyle(color: Colors.white, fontSize: 18)),
+              const Text(
+                AppStrings.myAlarms,
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
               const SizedBox(height: 10),
               Obx(
                     () => Expanded(
