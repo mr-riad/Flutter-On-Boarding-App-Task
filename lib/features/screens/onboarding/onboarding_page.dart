@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_onboarding_app_task/constants/app_strings.dart';
+import '../../../constants/app_colors.dart';
 import '../../models/onboarding_model.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -43,11 +45,23 @@ class OnboardingPage extends StatelessWidget {
               Container(
                 height: imageHeight,
                 width: double.infinity,
-                child: Image.asset(
-                  model.image,
-                  height: imageHeight,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(24),
+                    bottomRight: Radius.circular(24),
+                  ),
+                  image: DecorationImage(
+                    image: AssetImage(model.image),
+                    fit: BoxFit.cover,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 8,
+                      offset: const Offset(0, 4), // shadow direction
+                    ),
+                  ],
                 ),
               ),
               Positioned(
@@ -56,8 +70,8 @@ class OnboardingPage extends StatelessWidget {
                 child: TextButton(
                   onPressed: onSkip,
                   child: const Text(
-                    "Skip",
-                    style: TextStyle(color: Colors.blue),
+                    AppStrings.skip,
+                    style: TextStyle(color: AppColors.textPrimary),
                   ),
                 ),
               ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../binding/location_binding.dart';
+import '../features/screens/home/home_page.dart';
 import '../features/screens/location/location_page.dart';
 import '../features/screens/onboarding/onboarding_screen.dart';
-
 
 class FlutterOnBoardAppTask extends StatelessWidget {
   const FlutterOnBoardAppTask({super.key});
@@ -14,7 +15,9 @@ class FlutterOnBoardAppTask extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Onboarding App',
       theme: ThemeData.dark(),
+
       initialRoute: '/',
+
       getPages: [
         GetPage(
           name: '/',
@@ -23,10 +26,13 @@ class FlutterOnBoardAppTask extends StatelessWidget {
         GetPage(
           name: '/location',
           page: () => const LocationPage(),
-          binding: LocationBinding(), // important
+          binding: LocationBinding(),
+        ),
+        GetPage(
+          name: '/home',
+          page: () => HomePage(),
         ),
       ],
     );
-
   }
 }

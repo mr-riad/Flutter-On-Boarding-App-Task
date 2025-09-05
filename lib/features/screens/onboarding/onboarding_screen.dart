@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_onboarding_app_task/constants/app_colors.dart';
+import 'package:flutter_onboarding_app_task/constants/app_strings.dart';
 import 'package:get/get.dart';
 
 import '../../../common_widgets/custom_button.dart';
@@ -43,7 +45,7 @@ class OnboardingScreen extends StatelessWidget {
                   height: 8,
                   decoration: BoxDecoration(
                     color: controller.currentPage.value == index
-                        ? Colors.blue
+                        ? AppColors.inButtonColor
                         : Colors.grey,
                     borderRadius: BorderRadius.circular(4),
                   ),
@@ -55,8 +57,8 @@ class OnboardingScreen extends StatelessWidget {
             Obx(() => CustomButton(
               text: controller.currentPage.value ==
                   controller.pages.length - 1
-                  ? "Get Started"
-                  : "Next",
+                  ? AppStrings.getStarted
+                  : AppStrings.next,
               onTap: () {
                 if (controller.currentPage.value <
                     controller.pages.length - 1) {
